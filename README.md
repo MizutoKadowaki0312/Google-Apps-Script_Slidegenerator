@@ -1,2 +1,2 @@
-# Google-Apps-Script_SlideAutomation
+# Google-Apps-Script_Slidegenerator
 GoogleForm -> GoogleSlide
