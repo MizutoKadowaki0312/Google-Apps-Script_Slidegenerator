@@ -29,10 +29,12 @@ function generateSlidesFromSpreadsheet() {
   */
   var template_beforemtg = slide.getSlides()[1];
   var template_work_abstract = slide.getSlides()[2];
+  /*
   var template_work_01 = slide.getSlides()[3];
   var template_work_02 = slide.getSlides()[4];
   var template_work_03 = slide.getSlides()[5];
   var template_work_04 = slide.getSlides()[6];
+  */
   var template_sample = slide.getSlides()[7];
 
   //前回の連絡会対応に関するfor文
@@ -55,43 +57,17 @@ function generateSlidesFromSpreadsheet() {
     }
   }
 
-  //作業内容報告(01)に関するfor文
-  for(var i=1;i<datarange_work.length;i++)
+  //作業内容報告(詳細)に関するfor文(0903段階では，テンプレが3~6枚目なのでiの動く範囲は以下の通り．)
+  for(var i = 3; i < 7;i++)
   {
-    var newpage = slide.appendSlide(template_work_01);
-    for(var j=0;j<datarange_work[0].length;j++)
+    var template_work = slide.getSlides()[i];
+    for(var j = 1;j < datarange_work.length;j++)
     {
-      newpage.replaceAllText('{'+datarange_work[0][j]+'}', datarange_work[i][j]);
-    }
-  }
-
-  //作業内容報告(02)に関するfor文
-  for(var i=1;i<datarange_work.length;i++)
-  {
-    var newpage = slide.appendSlide(template_work_02);
-    for(var j=0;j<datarange_work[0].length;j++)
-    {
-      newpage.replaceAllText('{'+datarange_work[0][j]+'}', datarange_work[i][j]);
-    }
-  }
-
-  //作業内容報告(03)に関するfor文
-  for(var i=1;i<datarange_work.length;i++)
-  {
-    var newpage = slide.appendSlide(template_work_03);
-    for(var j=0;j<datarange_work[0].length;j++)
-    {
-      newpage.replaceAllText('{'+datarange_work[0][j]+'}', datarange_work[i][j]);
-    }
-  }
-
-  //作業内容報告(04)に関するfor文
-  for(var i=1;i<datarange_work.length;i++)
-  {
-    var newpage = slide.appendSlide(template_work_04);
-    for(var j=0;j<datarange_work[0].length;j++)
-    {
-      newpage.replaceAllText('{'+datarange_work[0][j]+'}', datarange_work[i][j]);
+      var newpage = slide.appendSlide(template_work);
+      for(var k = 0;k<datarange_work[0].length;k++)
+      {
+        newpage.replaceAllText('{'+datarange_work[0][k]+'}', datarange_work[j][k]);
+      }
     }
   }
 
