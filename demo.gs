@@ -21,7 +21,7 @@ function generateSlidesFromSpreadsheet() {
     }
   }
 
-    for(var i=1;i<datarange.length;i++){
+  for(var i=1;i<datarange.length;i++){
     var newpage = slide.appendSlide(template2);
     for(var j=0;j<datarange[0].length;j++){
       newpage.replaceAllText('{'+datarange[0][j]+'}', datarange[i][j]);
