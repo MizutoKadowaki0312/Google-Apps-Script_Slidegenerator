@@ -24,17 +24,11 @@ function generateSlidesFromSpreadsheet() {
     0枚目：タイトル
     1枚目：前回の連絡を受けた対応スライドテンプレート
     2枚目：作業内容(概要)報告スライドテンプレート
-    3~6枚目 : 作業内容の詳細スライドテンプレート → 以下でテンプレートを定義しているが，for文内でページ数を定義する方針． → for文で回す回数とページ数を対応させられない．．．
+    3~6枚目 : 作業内容の詳細スライドテンプレート → 以下でテンプレートを定義しているが，for文内でページ数を定義する方針．
     7枚目：試料作製報告スライドテンプレート
   */
   var template_beforemtg = slide.getSlides()[1];
   var template_work_abstract = slide.getSlides()[2];
-  /*
-  var template_work_01 = slide.getSlides()[3];
-  var template_work_02 = slide.getSlides()[4];
-  var template_work_03 = slide.getSlides()[5];
-  var template_work_04 = slide.getSlides()[6];
-  */
   var template_sample = slide.getSlides()[7];
 
   //前回の連絡会対応に関するfor文
